@@ -43,7 +43,7 @@ puglint: {
       disallowHtmlText: true,
       validateIndentation: 4
     },
-    src: ['test/fixtures/**/*.jade]
+    src: ['test/fixtures/**/*.jade']
   }
 
   // Or short version
