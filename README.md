@@ -7,6 +7,8 @@
 [![devDependency Status](https://img.shields.io/david/mrmlnc/grunt-puglint.svg?style=flat-square)](https://david-dm.org/mrmlnc/grunt-puglint#info=dependencies)
 [![devDependency Status](https://img.shields.io/david/dev/mrmlnc/grunt-puglint.svg?style=flat-square)](https://david-dm.org/mrmlnc/grunt-puglint#info=devDependencies)
 
+![image](https://cloud.githubusercontent.com/assets/7034281/12007446/c55156a8-ac15-11e5-9fda-4be1167c5709.png)
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
@@ -64,4 +66,5 @@ Plugin can read [.pug-lintrc file](https://github.com/pugjs/pug-lint#configurati
 
 ## History
 
+  * **v0.1.1** [2015-12-26] - Add `xo` to test section.
   * **v0.1.0** [2015-12-26] - Initial release.

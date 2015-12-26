@@ -1,7 +1,7 @@
 {
   "name": "grunt-puglint",
   "description": "Grunt plugin for pug-lint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Denis Malinochkin",
     "email": "dmalinochkin@rambler.ru"
@@ -12,7 +12,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "ava test/test.js"
+    "test": "xo && ava test/test.js"
   },
   "devDependencies": {
     "ava": "^0.8.0",
