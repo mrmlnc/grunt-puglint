@@ -1,0 +1,57 @@
+{
+  "name": "grunt-puglint",
+  "description": "Grunt plugin for pug-lint",
+  "version": "0.1.0",
+  "author": {
+    "name": "Denis Malinochkin",
+    "email": "dmalinochkin@rambler.ru"
+  },
+  "repository": "mrmlnc/grunt-puglint",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "ava test/test.js"
+  },
+  "devDependencies": {
+    "ava": "^0.8.0",
+    "grunt": "~0.4.5",
+    "rcloader": "^0.1.4",
+    "xo": "^0.12.1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "pug-lint": "^2.1.1",
+    "text-table": "^0.2.0"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "pug",
+    "pug lint",
+    "pug hint",
+    "jade",
+    "jade lint",
+    "jade hint",
+    "lint",
+    "hint"
+  ],
+  "files": [
+    "tasks",
+    "lib"
+  ],
+  "xo": {
+    "space": true,
+    "rules": {
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
+      "space-before-function-paren": 0
+    },
+    "envs": [
+      "node"
+    ]
+  }
+}
