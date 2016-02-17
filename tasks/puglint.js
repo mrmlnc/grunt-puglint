@@ -37,14 +37,16 @@ module.exports = function(grunt) {
     }
 
     var errors = [];
+    var failed = false;
     this.filesSrc.forEach(function(filepath) {
       errors = linter.checkFile(filepath);
 
       if (errors.length) {
+        failed = true;
         formatter.formatOutput(errors);
       }
     });
 
-    done(errors.length === 0);
+    done(!failed);
   });
 };
