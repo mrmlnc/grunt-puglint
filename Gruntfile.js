@@ -31,6 +31,16 @@ module.exports = function (grunt) {
         src: ['test/fixtures/**/*.jade']
       },
 
+      // Array messages
+      arrayMessages: {
+        options: {
+          preset: {
+            disallowSpacesInsideAttributeBrackets: true
+          }
+        },
+        src: ['test/fixtures/**/*.jade']
+      },
+
       // RC file
       rcFile: {
         options: {
