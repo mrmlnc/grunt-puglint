@@ -66,6 +66,7 @@ Plugin can read [.pug-lintrc file](https://github.com/pugjs/pug-lint#configurati
 
 ## History
 
+  * **v0.1.3** [2016-03-09] - Fix failure when item.msg is array. Thanks [@Antiavanti](https://github.com/mrmlnc/grunt-puglint/pull/2).
   * **v0.1.2** [2016-02-17] - Make sure the task fails whenever an error is found in any file. Thanks **@rdevaissiere**.
   * **v0.1.1** [2015-12-26] - Add `xo` to test section.
   * **v0.1.0** [2015-12-26] - Initial release.
