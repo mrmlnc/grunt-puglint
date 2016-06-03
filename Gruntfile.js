@@ -1,50 +1,40 @@
-/*
- * grunt-puglint
- * https://github.com/mrmlnc/grunt-puglint
- */
-
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   grunt.initConfig({
     puglint: {
-      // Default test with default `clock` config
-      clock: {
+      default: {
         src: ['test/fixtures/**/*.jade']
       },
 
-      // Custom config with the string in the options
-      customConfigString: {
+      extendsClock: {
         options: {
-          preset: 'jadelint'
+          extends: 'clock'
         },
         src: ['test/fixtures/**/*.jade']
       },
 
-      // Custom config with the object in the options
+      extendsPath: {
+        options: {
+          extends: './test/fixtures/.pug-lintrc'
+        },
+        src: ['test/fixtures/**/*.jade']
+      },
+
       customConfigObject: {
         options: {
-          preset: {
+          config: {
             disallowIdLiterals: true
           }
         },
         src: ['test/fixtures/**/*.jade']
       },
 
-      // Array messages
       arrayMessages: {
         options: {
-          preset: {
+          config: {
             disallowSpacesInsideAttributeBrackets: true
           }
-        },
-        src: ['test/fixtures/**/*.jade']
-      },
-
-      // RC file
-      rcFile: {
-        options: {
-          puglintrc: 'test/fixtures/.pug-lintrc'
         },
         src: ['test/fixtures/**/*.jade']
       }

@@ -2,29 +2,22 @@
   "name": "grunt-puglint",
   "description": "Grunt plugin for pug-lint",
   "version": "0.1.3",
+  "license": "MIT",
+  "repository": "mrmlnc/grunt-puglint",
   "author": {
     "name": "Denis Malinochkin",
-    "email": "dmalinochkin@rambler.ru"
+    "url": "canonium.com"
   },
-  "repository": "mrmlnc/grunt-puglint",
-  "license": "MIT",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && ava test/test.js"
+    "test": "xo && mocha"
   },
-  "devDependencies": {
-    "ava": "^0.8.0",
-    "grunt": "~0.4.5",
-    "rcloader": "^0.1.4",
-    "xo": "^0.12.1"
-  },
-  "dependencies": {
-    "chalk": "^1.1.1",
-    "pug-lint": "^2.1.1",
-    "text-table": "^0.2.0"
-  },
+  "files": [
+    "tasks",
+    "lib"
+  ],
   "keywords": [
     "gruntplugin",
     "grunt",
@@ -37,21 +30,31 @@
     "lint",
     "hint"
   ],
-  "files": [
-    "tasks",
-    "lib"
-  ],
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "mocha": "^2.5.3",
+    "pug-lint-config-clock": "^1.1.1",
+    "xo": "^0.15.1"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "pug-lint": "^2.2.0",
+    "text-table": "^0.2.0"
+  },
   "xo": {
-    "space": true,
     "rules": {
-      "object-curly-spacing": [
-        2,
-        "always"
-      ],
-      "space-before-function-paren": 0
+      "indent": [2, 2, { "SwitchCase": 1 }],
+      "arrow-parens": [2, "always"],
+      "object-curly-spacing": [2, "always"],
+      "babel/object-curly-spacing": 0,
+      "space-before-function-paren": [2, "never"]
     },
+    "ignores": [
+      "test/**"
+    ],
     "envs": [
-      "node"
+      "node",
+      "mocha"
     ]
   }
 }

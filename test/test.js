@@ -1,51 +1,46 @@
 'use strict';
 
-const test = require('ava');
-const exec = require('child_process').exec;
+var assert = require('assert');
+var exec = require('child_process').exec;
 
-test.cb('Default test with default `clock` config', function(t) {
-  exec('grunt puglint:clock', function(err, stdout) {
-    var isOneError = /ID literals must/.test(stdout.toString());
-    var isTwoError = /REQUIRECLASSLITERALSBEFOREIDLITERALS/.test(stdout.toString());
-
-    t.same(isOneError && isTwoError, true);
-    t.end();
+it('Should work without preferences', function(done) {
+  exec('grunt puglint:default', function(err, stdout) {
+    assert.equal(/Done\./.test(stdout), true);
+    done();
   });
 });
 
-test.cb('Custom config with the string in the options', function(t) {
-  exec('grunt puglint:customConfigString', function(err, stdout) {
-    var isOneError = /DISALLOWSPECIFICATTRIBUTES/.test(stdout.toString());
+it('Should work with extends from preset', function(done) {
+  exec('grunt puglint:extendsClock', function(err, stdout) {
+    var isOneError = /DISALLOWIDLITERALS/.test(stdout);
+    var isTwoError = /REQUIRECLASSLITERALSBEFOREIDLI/.test(stdout);
+    var isThreeError = /Missing line feed at file end/.test(stdout);
 
-    t.same(isOneError, true);
-    t.end();
+    assert.equal(isOneError && isTwoError && isThreeError, true);
+    done();
   });
 });
 
-test.cb('Custom config with the object in the options', function(t) {
+it('Should work with extends from path', function(done) {
+  exec('grunt puglint:extendsPath', function(err, stdout) {
+    assert.equal(/REQUIRECLASSLITERALSBEFOREIDLITERALS/.test(stdout), true);
+    done();
+  });
+});
+
+it('Should work with the object in the option', function(done) {
   exec('grunt puglint:customConfigObject', function(err, stdout) {
-    var isOneError = /DISALLOWIDLITERALS/.test(stdout.toString());
-
-    t.same(isOneError, true);
-    t.end();
+    assert.equal(/DISALLOWIDLITERALS/.test(stdout), true);
+    done();
   });
 });
 
-test.cb('Array messages', function(t) {
+it('Should work with array messages', function(done) {
   exec('grunt puglint:arrayMessages', function(err, stdout) {
-    var isOneError = /Illegal space after opening bracket\s+DISALLOWSPACESINSIDEATTRIBUTEBRACKETS/.test(stdout.toString());
-    var isTwoError = /Illegal space before closing bracket\s+DISALLOWSPACESINSIDEATTRIBUTEBRACKETS/.test(stdout.toString());
+    var isOneError = /Illegal space after opening bracket/.test(stdout);
+    var isTwoError = /Illegal space before closing bracket/.test(stdout);
 
-    t.same(isOneError && isTwoError, true);
-    t.end();
-  });
-});
-
-test.cb('RC file', function(t) {
-  exec('grunt puglint:rcFile', function(err, stdout) {
-    var isOneError = /REQUIRECLASSLITERALSBEFOREIDLITERALS/.test(stdout.toString());
-
-    t.same(isOneError, true);
-    t.end();
+    assert.equal(isOneError && isTwoError, true);
+    done();
   });
 });

@@ -10,7 +10,7 @@
 ![image](https://cloud.githubusercontent.com/assets/7034281/12007446/c55156a8-ac15-11e5-9fda-4be1167c5709.png)
 
 ## Getting Started
-This plugin requires Grunt `~0.4.5`
+This plugin requires Grunt `~1.0.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -26,24 +26,21 @@ grunt.loadNpmTasks('grunt-puglint');
 
 ## Usage
 
-If you need a clean config settings, then use the object(`preset: {}`) or config file (`puglintrc: '..'`).
+To configure validator, use the property `config`.
 
 ```js
 puglint: {
   taskName: {
     options: {
-      // The name of the preset: `clock` (default) or `jadelint`
-      preset: 'clock',
-      // If preset is an object, the standard preset is not loaded
-      preset: {
+      // Use preset: npm i -D pug-lint-config-clock
+      config: {
+        extends: 'clock'
+      },
+      // Or config
+      config: {
         disallowHtmlText: true,
         validateIndentation: 4
       }
-      // The path to the configuration file
-      puglintrc: 'test/fixtures/.pug-lintrc',
-      // Override preset settings (default: `clock`)
-      disallowHtmlText: true,
-      validateIndentation: 4
     },
     src: ['test/fixtures/**/*.jade']
   }
@@ -64,9 +61,10 @@ Plugin can read [.pug-lintrc file](https://github.com/pugjs/pug-lint#configurati
 
 [List of available rules](https://github.com/pugjs/pug-lint/blob/master/docs/rules.md).
 
-## History
+## Changelog
 
-  * **v0.1.3** [2016-03-09] - Fix failure when item.msg is array. Thanks [@Antiavanti](https://github.com/mrmlnc/grunt-puglint/pull/2).
-  * **v0.1.2** [2016-02-17] - Make sure the task fails whenever an error is found in any file. Thanks **@rdevaissiere**.
-  * **v0.1.1** [2015-12-26] - Add `xo` to test section.
-  * **v0.1.0** [2015-12-26] - Initial release.
+See the [Releases section of our GitHub project](https://github.com/mrmlnc/grunt-puglint/releases) for changelogs for each release version.
+
+## License
+
+This software is released under the terms of the MIT license.

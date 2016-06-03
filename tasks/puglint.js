@@ -10,23 +10,12 @@ var linter = new PugLint();
 var formatter = require('../lib/formatter');
 
 module.exports = function(grunt) {
-  grunt.registerMultiTask('puglint', 'Grunt plugin for pug-lint', function () {
+  grunt.registerMultiTask('puglint', 'Grunt plugin for pug-lint', function() {
     var done = this.async();
-    var options = this.options({
-      preset: 'clock'
-    });
+    var options = this.options({});
 
-    if (typeof options.preset === 'object') {
-      options = options.preset;
-    }
-
-    var pugLintRc = options.puglintrc;
-    if (pugLintRc) {
-      if (grunt.file.exists(pugLintRc)) {
-        options = grunt.file.readJSON(pugLintRc);
-      } else {
-        grunt.log.error('Configuration file not found. Used a standard config: `clock`.');
-      }
+    if (typeof options.config === 'object') {
+      options = options.config;
     }
 
     linter.configure(options);
