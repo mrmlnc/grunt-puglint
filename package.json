@@ -1,7 +1,7 @@
 {
   "name": "grunt-puglint",
+  "version": "1.0.0",
   "description": "Grunt plugin for pug-lint",
-  "version": "0.1.3",
   "license": "MIT",
   "repository": "mrmlnc/grunt-puglint",
   "author": {
