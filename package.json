@@ -32,7 +32,7 @@
   ],
   "devDependencies": {
     "grunt": "~1.0.1",
-    "mocha": "^2.5.3",
+    "mocha": "^3.0.2",
     "pug-lint-config-clock": "^1.1.1",
     "xo": "^0.15.1"
   },
@@ -43,11 +43,26 @@
   },
   "xo": {
     "rules": {
-      "indent": [2, 2, { "SwitchCase": 1 }],
-      "arrow-parens": [2, "always"],
-      "object-curly-spacing": [2, "always"],
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "arrow-parens": [
+        2,
+        "always"
+      ],
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
       "babel/object-curly-spacing": 0,
-      "space-before-function-paren": [2, "never"]
+      "space-before-function-paren": [
+        2,
+        "never"
+      ]
     },
     "ignores": [
       "test/**"
