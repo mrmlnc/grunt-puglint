@@ -1,5 +1,7 @@
 # grunt-puglint
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrmlnc/grunt-puglint.svg)](https://greenkeeper.io/)
+
 > Grunt plugin for [pug-lint](https://github.com/pugjs/pug-lint) (formerly Jade).
 
 [![Travis](https://img.shields.io/travis/mrmlnc/grunt-puglint.svg?style=flat-square)](https://travis-ci.org/mrmlnc/grunt-puglint)
